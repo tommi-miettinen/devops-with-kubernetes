@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: logoutput
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: logoutput
+    template:
+        metadata:
+            labels:
+                app: logoutput
+        spec:
+            containers:
+                - name: logoutput
+                  image: tommi-miettinen/logoutput
+                  imagePullPolicy: IfNotPresent
