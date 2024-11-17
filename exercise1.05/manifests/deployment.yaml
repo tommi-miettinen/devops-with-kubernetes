@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: nodeapp
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: nodeapp
+    template:
+        metadata:
+            labels:
+                app: nodeapp
+        spec:
+            containers:
+                - name: nodeapp
+                  image: tommi-miettinen/nodeapp
+                  imagePullPolicy: IfNotPresent
